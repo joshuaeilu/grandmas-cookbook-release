@@ -4,7 +4,7 @@ import {useSearchParams} from 'next/navigation';
 import {useData} from '../../helpers/data.js';
 export default function SelectedAllCategories(){
     const {contentData} = useData();
-    const category = new URLSearchParams(useSearchParams()).get('category');
+    const category = new URLSearchParams(useSearchParams()).get('category' || null);
     const CategoryData = contentData.filter(meal => meal.strCategory === category);
     return (
         <div>
