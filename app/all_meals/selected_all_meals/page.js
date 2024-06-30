@@ -3,7 +3,7 @@ import { useEffect, useState } from "react";
 import {useData} from '../../helpers/data';
 import MealInfo from "../../components/mealinfo.js";
 import {usePathname, useRouter, useSearchParams} from 'next/navigation';
-export default function Page() {
+export default function SelectedAllMeals() {
     const {contentData} = useData();
     const [mealPreview, setMealPreview ] = useState([]);
     const searchParams = new URLSearchParams(useSearchParams());

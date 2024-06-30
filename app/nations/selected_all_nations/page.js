@@ -2,7 +2,7 @@
 import Meals from '../../components/meals';
 import {useSearchParams} from 'next/navigation';
 import {useData} from '../../helpers/data.js';
-export default function Page(){
+export default function SelectedAllNations(){
     const {contentData} = useData();
     const nation = new URLSearchParams(useSearchParams()).get('nation');
     const NationData = contentData.filter(meal => meal.strArea === nation);
