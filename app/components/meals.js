@@ -31,11 +31,14 @@ export default function Meals({mealData}) {
 
 
         return (
-            <div  style={{ display: 'flex', flexDirection: 'row'}}>
+            <div  style={{ display: 'flex', flexDirection: 'row', maxHeight:'100vh', overflowY:'auto'}}>
                 <div>
-        <SearchBar searchArray={meals} onDataChange={handleDataChange} style={{display:'fixed'}}  />
+        
+        <div style={{position:'fixed',backgroundColor:'white'}} className='w-full '>
+        <SearchBar searchArray={meals} onDataChange={handleDataChange}  />
+        </div>
        
-        <div className="flex flex-wrap " >
+        <div style={{marginTop:'4rem'}} className="flex flex-wrap " >
 
         {mealData.map((meal) => (
                         <button  onClick={() => handleClick(meal.idMeal)}>

@@ -32,7 +32,7 @@ export default function SearchBar(props) {
     return (
       
         <div style={{display:'flex', justifyContent:'center'}}>
- <div className="w-full max-w-lg mt-2 relative">
+ <div className="w-full max-w-lg mt-2 ">
       <form onSubmit={handleSubmit} className="relative">
         <label htmlFor="default-search" className="mb-2 text-sm font-medium text-gray-900 sr-only dark:text-white">Search</label>
         <div className="relative">
