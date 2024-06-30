@@ -1,4 +1,7 @@
+
+import SideBar from "./components/sidebar";
 import { Inter } from "next/font/google";
+import { DataProvider } from "./helpers/data.js";
 import "./globals.css";
 
 const inter = Inter({ subsets: ["latin"] });
@@ -10,8 +13,20 @@ export const metadata = {
 
 export default function RootLayout({ children }) {
   return (
+    <DataProvider>
     <html lang="en">
-      <body className={inter.className}>{children}</body>
+        <head>
+        <link href="https://cdnjs.cloudflare.com/ajax/libs/flowbite/2.3.0/flowbite.min.css" rel="stylesheet" />
+        </head>
+      <body className={inter.className}>
+        <div className="flex ">
+        <SideBar />
+        <div className="flex-1" >{children}</div>
+        </div>
+        
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/2.3.0/flowbite.min.js"></script>
+        </body>
     </html>
+    </DataProvider>
   );
 }
