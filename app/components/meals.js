@@ -25,9 +25,6 @@ export default function Meals({mealData}) {
            
         }
 
-        const handleDataChange = (newData) => { 
-            setMealData(newData);
-          };
 
           
 
@@ -53,7 +50,6 @@ export default function Meals({mealData}) {
 
         </div>
 
-    </div>
 
     
                
