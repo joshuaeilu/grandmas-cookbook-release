@@ -29,6 +29,7 @@ export default function Meals({mealData}) {
             setMealData(newData);
           };
 
+          
 
         return (
             <div  style={{ display: 'flex', flexDirection: 'row', maxHeight:'100vh', overflowY:'auto'}}>
