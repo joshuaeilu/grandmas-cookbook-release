@@ -11,7 +11,7 @@ return (
    </svg>
 </button>
 
-<aside id="default-sidebar" className="absolute md:relative top-0 left-0 z-40 w-64 md:w-48 xl:w-64 h-screen transition-transform -translate-x-full sm:translate-x-0" aria-label="Sidebar">
+<aside id="default-sidebar" className="fixed md:relative top-0 left-0 z-40 w-64 md:w-48 xl:w-64 h-screen transition-transform -translate-x-full sm:translate-x-0" aria-label="Sidebar">
    <div className="h-full px-3 py-4 overflow-y-auto bg-white ">
     <img src="/full_logo.png" alt="avatar" />
       <ul className="space-y-2 font-medium">
@@ -32,11 +32,11 @@ return (
             </Link>
          </li>
          <li>
-            <Link href="/areas" className="flex items-center p-2 mb-2 text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 group">
+            <Link href="/nations" className="flex items-center p-2 mb-2 text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 group">
                <svg className="w-6 h-6 text-gray-500 transition duration-75 dark:text-gray-400 group-hover:text-gray-900 dark:group-hover:text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor"viewBox="0 -960 960 960">
                <path d="M480-80q-83 0-156-31.5T197-197q-54-54-85.5-127T80-480q0-83 31.5-156T197-763q54-54 127-85.5T480-880q83 0 156 31.5T763-763q54 54 85.5 127T880-480q0 83-31.5 156T763-197q-54 54-127 85.5T480-80Zm0-80q134 0 227-93t93-227q0-7-.5-14.5T799-507q-5 29-27 48t-52 19h-80q-33 0-56.5-23.5T560-520v-40H400v-80q0-33 23.5-56.5T480-720h40q0-23 12.5-40.5T563-789q-20-5-40.5-8t-42.5-3q-134 0-227 93t-93 227h200q66 0 113 47t47 113v40H400v110q20 5 39.5 7.5T480-160Z"/>
                </svg>
-               <span className="ms-3">Regions</span>
+               <span className="ms-3">Nations</span>
             </Link>
          </li>
          <li>

@@ -24,6 +24,12 @@ export default function SearchBar(props) {
     props.onDataChange(newData);
   };
 
+  function handleClickSuggestion(suggestion) {
+    setSearchTerm(suggestion);
+    handleDataChanges(props.searchArray.filter(item => item.strMeal.toLowerCase().includes(suggestion.toLowerCase())));
+    setSuggestions([]);
+  }
+
   const handleSubmit = (e) => {
     e.preventDefault();
     handleDataChanges(props.searchArray.filter(item => item.strMeal.toLowerCase().includes(searchTerm.toLowerCase())));
@@ -31,8 +37,8 @@ export default function SearchBar(props) {
     };
     return (
       
-        <div style={{display:'flex', justifyContent:'center'}}>
- <div className="w-full max-w-lg mt-2 ">
+      <div style={{display:'flex', justifyContent:'center'}}>
+ <div className="w-full max-w-lg mt-2 relative">
       <form onSubmit={handleSubmit} className="relative">
         <label htmlFor="default-search" className="mb-2 text-sm font-medium text-gray-900 sr-only dark:text-white">Search</label>
         <div className="relative">
@@ -64,7 +70,7 @@ export default function SearchBar(props) {
             <li
               key={index}
               className="px-4 py-2 cursor-pointer hover:bg-gray-200 dark:hover:bg-gray-600"
-              onClick={() => setSearchTerm(suggestion)}
+              onClick={() => handleClickSuggestion(suggestion)}
             >
               {suggestion}
             </li>
