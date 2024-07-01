@@ -31,6 +31,7 @@ export default function AllMeals() {
 
   return (
     <div>
+      
       <Meals mData={contentData}  />
     </div>
   );
