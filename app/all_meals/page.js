@@ -1,7 +1,5 @@
 'use client'
-import useSWR from 'swr';
 import {useData} from '../helpers/data';
-import { useEffect } from 'react';
 import Meals from '../components/meals';
 export default function AllMeals() {
   const fetcher = (...args) => fetch(...args).then(res => res.json());
