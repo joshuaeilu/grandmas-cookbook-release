@@ -1,4 +1,4 @@
-'use client'
+
 import { Suspense, useEffect, useState } from "react";
 import {useData} from '../../helpers/data';
 import MealInfo from "../../components/mealinfo.js";
@@ -28,7 +28,8 @@ export default function SelectedAllMeals() {
       });
 
   return (
-    <Suspense>
+    <Suspense key={`${searchParams.get('id')}`} fallback={<div>Loading...</div>}>
+    
                         <MealInfo onClose={() => setIsVisible(false)}
                         mealYoutube = {mealPreview.strYoutube} mealImage = {mealPreview.strMealThumb} mealTitle = {mealPreview.strMeal}   mealRegion = {mealPreview.strArea}  mealCategory = {mealPreview.strCategory} mealTags = {mealPreview.strTags} mealInstructions = {mealPreview.strInstructions}  mealIngredients = {ingredients} mealMeasures = {measures}
                          />

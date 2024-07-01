@@ -41,13 +41,12 @@ export default function Meals({mData}) {
 
         {mealData.map((meal) => (
                         <button className='p-2'  onClick={() => handleClick(meal.idMeal)}>
-                            <Suspense>
+                            
                             <MealCard
                                 key={meal.idMeal}
                                 imgSrc={meal.strMealThumb}
                                 title={meal.strMeal.substring(0, 23)}
                             />
-                            </Suspense>
                         </button>
                     ))}
 
