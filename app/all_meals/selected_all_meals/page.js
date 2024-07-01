@@ -1,5 +1,5 @@
 'use client'
-import { useEffect, useState } from "react";
+import { Suspense, useEffect, useState } from "react";
 import {useData} from '../../helpers/data';
 import MealInfo from "../../components/mealinfo.js";
 import {usePathname, useRouter, useSearchParams} from 'next/navigation';
@@ -28,11 +28,11 @@ export default function SelectedAllMeals() {
       });
 
   return (
-                    
+                    <Suspense>
                         <MealInfo onClose={() => setIsVisible(false)}
                         mealYoutube = {mealPreview.strYoutube} mealImage = {mealPreview.strMealThumb} mealTitle = {mealPreview.strMeal}   mealRegion = {mealPreview.strArea}  mealCategory = {mealPreview.strCategory} mealTags = {mealPreview.strTags} mealInstructions = {mealPreview.strInstructions}  mealIngredients = {ingredients} mealMeasures = {measures}
                          />
-
+</Suspense>
 
   );
 }
