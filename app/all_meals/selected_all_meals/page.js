@@ -1,4 +1,4 @@
-
+'use client'
 import { Suspense, useEffect, useState } from "react";
 import {useData} from '../../helpers/data';
 import MealInfo from "../../components/mealinfo.js";
