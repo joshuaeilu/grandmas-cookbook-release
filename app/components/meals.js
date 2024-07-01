@@ -25,7 +25,6 @@ export default function Meals({mData}) {
             //Navigate to the meals info page
             router.push(`/all_meals/selected_all_meals/?id=${id}`, undefined, { shallow: true });
             
-           
         }
 
 

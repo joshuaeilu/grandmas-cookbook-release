@@ -26,6 +26,7 @@ export default function RootLayout({ children }) {
         <div className="flex-1" >{children}</div>
         </div>
         
+        
         <script src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/2.3.0/flowbite.min.js"></script>
         </body>
     </html>

@@ -19,7 +19,7 @@ export default function Categories(){
     return (
         <div className="flex flex-wrap">
         {data?.categories.map((category) => (
-          <div className="p-3" key={category.idCategory} onClick={()=> handleCardClick(category.strCategory)}>
+          <div className="p-2" key={category.idCategory} onClick={()=> handleCardClick(category.strCategory)}>
             <MealCard
               imgSrc={category.strCategoryThumb}
               title={category.strCategory}

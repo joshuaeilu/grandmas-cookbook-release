@@ -44,7 +44,7 @@ export default function Nations(){
     return (
         <div className="flex flex-wrap">
         {countryIcons.map((country) => (
-                            <div className="p-3"  onClick={() => handleClick(country.strArea)}>
+                            <div className="p-2"  onClick={() => handleClick(country.strArea)}>
                                 <MealCard
                                     imgSrc={`https://flagsapi.com/${(country.code).toUpperCase()}/flat/64.png`}
                                     title={country.strArea}
