@@ -1,8 +1,6 @@
 'use client'
 import { useEffect, useState, useCallback } from "react";
 import IngredientElement from "./ingredient_element";
-import MealInfo from "./mealinfo";
-import {useData} from "../helpers/DataContext.js";
 import MealCard from "./mealcard";
 import useSWR from "swr";
 
@@ -16,25 +14,6 @@ export default function MealMakerIngredients() {
     const [searchQuery, setSearchQuery] = useState('');
     const [mealPreview, setMealPreview] = useState([]);
    
-    // Refetch ingredient data when usedIngredients change
-    useEffect(() => {
-        if (usedIngredients.length > 0) {
-            const ingredients = usedIngredients.join(',');
-            fetch(`https://www.themealdb.com/api/json/v2/9973533/filter.php?i=${ingredients}`)
-                .then(res => res.json())
-                .then(data => {
-                    setAllIngredientMeals(data.meals || []);
-                    const matchedMeal = contentData.contentData.find(meal => meal.idMeal === data.meals[0].idMeal);
-                    setMealPreview(contentData.contentData[0] || {});
-                    setMealPreview(matchedMeal || {});
-                });
-        } else {
-            setAllIngredientMeals([]);
-        }
-    }, [usedIngredients]);
-
-
-
     useEffect(() => {
         if (ingredientList) {
             const allTheIngredientSuggestions = ingredientList.meals.map((item) => item.strIngredient);
@@ -61,7 +40,6 @@ export default function MealMakerIngredients() {
         });
     }, []);
 
-    // Filter and sort ingredientSuggestions to have checked items at the top
     const filteredIngredientSuggestions = searchQuery
         ? mockFetchIngredientSuggestions(searchQuery)
         : ingredientSuggestions;
@@ -132,15 +110,6 @@ export default function MealMakerIngredients() {
                     ))}
                 </div>
             </div>
-            <MealInfo
-                mealImage = {mealPreview.strMealThumb}
-                mealTitle = {mealPreview.strMeal}
-                mealRegion = {mealPreview.strArea}
-                mealCategory = {mealPreview.strCategory}
-                mealTags = {mealPreview.strTags}
-                mealInstructions = {mealPreview.strInstructions}
-                mealIngredients = {ingredients}
-                mealMeasures = {measures} />
         </div>
     );
 }
