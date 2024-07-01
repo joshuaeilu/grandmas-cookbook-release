@@ -3,6 +3,7 @@ import {useRouter} from 'next/navigation';
 import {useState, useEffect} from 'react';
 import SearchBar from "../components/searchbar.js";
 import MealCard from "../components/mealcard.js";
+import {Suspense} from 'react';
 
 
 
@@ -40,11 +41,13 @@ export default function Meals({mData}) {
 
         {mealData.map((meal) => (
                         <button className='p-2'  onClick={() => handleClick(meal.idMeal)}>
+                            <Suspense>
                             <MealCard
                                 key={meal.idMeal}
                                 imgSrc={meal.strMealThumb}
                                 title={meal.strMeal.substring(0, 23)}
                             />
+                            </Suspense>
                         </button>
                     ))}
 
