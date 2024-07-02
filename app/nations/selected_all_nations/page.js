@@ -1,11 +1,10 @@
 'use client'
 import Meals from '../../components/meals';
 import {useSearchParams} from 'next/navigation';
-import {useData} from '../../helpers/data.js';
+import mealData from '@/app/helpers/data';
 export default function SelectedAllNations(){
-    const {contentData} = useData();
     const nation = new URLSearchParams(useSearchParams()).get('nation');
-    const NationData = contentData.filter(meal => meal.strArea === nation);
+    const NationData = mealData.filter(meal => meal.strArea === nation);
     return (
         <div>
             <Meals mData={NationData} />

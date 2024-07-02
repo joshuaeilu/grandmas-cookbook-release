@@ -1,12 +1,13 @@
 'use client'
 import { Suspense, useEffect, useState } from "react";
 import MealInfo from "../../components/mealinfo.js";
-import {usePathname, useRouter, useSearchParams} from 'next/navigation';
+import mealData from "@/app/helpers/data.js";
+import { useSearchParams} from 'next/navigation';
 export default function SelectedAllMeals() {
     const [mealPreview, setMealPreview ] = useState([]);
     const searchParams = new URLSearchParams(useSearchParams());
     const mealId = searchParams.get('id');
-    const meal = contentData.find(meal => meal.idMeal === mealId);
+    const meal = mealData.find(meal => meal.idMeal === mealId);
     
     
     useEffect(() => {

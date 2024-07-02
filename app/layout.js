@@ -1,7 +1,6 @@
 
 import SideBar from "./components/sidebar";
 import { Inter } from "next/font/google";
-import { DataProvider } from "./helpers/data.js";
 import {Suspense} from 'react';
 import "./globals.css";
 
@@ -14,7 +13,6 @@ export const metadata = {
 
 export default function RootLayout({ children }) {
   return (
-    <DataProvider>
     <html lang="en">
         <head>
         <link href="https://cdnjs.cloudflare.com/ajax/libs/flowbite/2.3.0/flowbite.min.css" rel="stylesheet" />
@@ -33,6 +31,5 @@ export default function RootLayout({ children }) {
         <script src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/2.3.0/flowbite.min.js"></script>
         </body>
     </html>
-    </DataProvider>
   );
 }

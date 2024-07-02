@@ -2,15 +2,14 @@
 import { useEffect, useState, useCallback } from "react";
 import {useRouter} from 'next/navigation';
 import IngredientElement from "./ingredient_element";
+import mealData from '@/app/helpers/data';
 import MealCard from "./mealcard";
-import { useData } from "../helpers/data.js";
 import useSWR from "swr";
 
 export default function MealMakerIngredients() {
     const router = useRouter();
     const fetcher = (...args) => fetch(...args).then(res => res.json());
     const { data: ingredientList, error } = useSWR('https://www.themealdb.com/api/json/v2/9973533/list.php?i=list', fetcher);
-    const contentData = useData();
     const [usedIngredients, setUsedIngredients] = useState([]);
     const [ingredientSuggestions, setIngredientSuggestions] = useState([]);
     const [allIngredientMeals, setAllIngredientMeals] = useState([]);
@@ -25,10 +24,10 @@ export default function MealMakerIngredients() {
     }, [ingredientList]);
 
     useEffect(() => {
-        if (contentData.contentData) {
+        if (mealData) {
             filterMealsByIngredients();
         }
-    }, [usedIngredients, contentData.contentData]);
+    }, [usedIngredients, mealData]);
 
     const handleSearchChange = (e) => {
         setSearchQuery(e.target.value);
@@ -68,7 +67,7 @@ export default function MealMakerIngredients() {
             return;
         }
 
-        const filteredMeals = contentData.contentData.filter(meal => {
+        const filteredMeals = mealData.filter(meal => {
             const mealIngredients = Array.from({ length: 20 }, (_, i) => meal[`strIngredient${i + 1}`]?.toLowerCase() || '').filter(Boolean);
             return usedIngredients.every(ingredient => 
                 mealIngredients.some(mealIng => mealIng.includes(ingredient.toLowerCase()))
