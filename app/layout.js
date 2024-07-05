@@ -1,10 +1,10 @@
 
 import SideBar from "./components/sidebar";
-import { Inter } from "next/font/google";
+import { Roboto } from "next/font/google";
 import {Suspense} from 'react';
 import "./globals.css";
 
-const inter = Inter({ subsets: ["latin"] });
+const roboto = Roboto({ subsets: ["latin"], weight:['400', '500', '700']});
 
 export const metadata = {
   title: "Create Next App",
@@ -19,11 +19,12 @@ export default function RootLayout({ children }) {
 
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         </head>
-      <body className={inter.className}>
-        <div className="flex ">
+      <body className={roboto.className}>
+        <div className="md:flex">
+        
         <SideBar />
         <Suspense fallback={<div>Loading...</div>}>
-        <div className="flex-1" >{children}</div>
+        <div  className="flex-1">{children}</div>
         </Suspense>
         </div>
         

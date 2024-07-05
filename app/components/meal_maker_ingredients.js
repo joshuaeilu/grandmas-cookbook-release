@@ -88,7 +88,7 @@ export default function MealMakerIngredients() {
 
     function handleCardClick(mealClickedId){
         //Navigate to the meals info page
-        router.push(`../all_meals/selected_all_meals/?id=${mealClickedId}`, undefined, { shallow: true });
+        router.push('../meal_maker/selected_meal_maker/?id=' + mealClickedId, undefined, { shallow: true });
     }
 
     return (

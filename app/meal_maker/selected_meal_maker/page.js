@@ -1,20 +1,13 @@
 'use client'
-import { Suspense, useEffect, useState } from "react";
-import MealInfo from "../../components/mealinfo.js";
-import mealData from "@/app/helpers/data.js";
-import { useSearchParams} from 'next/navigation';
-export default function SelectedAllMeals() {
-    const [mealPreview, setMealPreview ] = useState([]);
+import Meals from '../../components/meals';
+import {useSearchParams} from 'next/navigation';
+import MealInfo from '@/app/components/mealinfo';
+import mealData from '@/app/helpers/data';
+export default function SelectedAllCategories(){
     const searchParams = new URLSearchParams(useSearchParams());
     const mealId = searchParams.get('id');
-    const meal = mealData.find(meal => meal.idMeal === mealId);
-    
-    
-    useEffect(() => {
-        if(meal) {
-            setMealPreview(meal);
-        }
-    }, [meal]);
+    const mealPreview = mealData.find(meal => meal.idMeal === mealId);
+
     //getting ingredients and measurements and putting them in an array
     const ingredients = [];
     const measures = [];
@@ -26,12 +19,11 @@ export default function SelectedAllMeals() {
         }
       });
 
-  return (
-    
-                        <MealInfo 
+    return (
+        <div>
+            <MealInfo 
                         mealYoutube = {mealPreview.strYoutube} mealImage = {mealPreview.strMealThumb} mealTitle = {mealPreview.strMeal}   mealRegion = {mealPreview.strArea}  mealCategory = {mealPreview.strCategory} mealTags = {mealPreview.strTags} mealInstructions = {mealPreview.strInstructions}  mealIngredients = {ingredients} mealMeasures = {measures}
                          />
-
-
-  );
+        </div>
+    )
 }

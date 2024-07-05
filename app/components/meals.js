@@ -3,6 +3,8 @@ import {useRouter} from 'next/navigation';
 import {useState, useEffect} from 'react';
 import SearchBar from "../components/searchbar.js";
 import MealCard from "../components/mealcard.js";
+import styles from '../page.module.css';
+import {Suspense} from 'react';
 
 
 
@@ -32,14 +34,14 @@ export default function Meals({mData}) {
 
         return (
             <div  style={{ display: 'flex', flexDirection: 'column' }}>
-                <div style={{position:'fixed', width:'80%',backgroundColor:'white', zIndex:'30'}}>
+                <div style={{padding:'0 1rem 1rem 1rem'}} >
         <SearchBar searchArray={mealData} onDataChange={handleDataChange}  />
         </div>
        
-        <div style={{marginTop:'4.3rem',maxHeight:'100vh', overflowY:'auto'}} className="flex flex-wrap " >
+        <div style={{maxHeight:'100vh', overflowY:'auto', justifyContent:'space-evenly'}} className="flex flex-wrap " >
 
         {mealData.map((meal) => (
-                        <button className='p-2'  onClick={() => handleClick(meal.idMeal)}>
+                        <button className={styles.mealButton}  onClick={() => handleClick(meal.idMeal)}>
                             
                             <MealCard
                                 key={meal.idMeal}
