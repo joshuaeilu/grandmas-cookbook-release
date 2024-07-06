@@ -10,42 +10,11 @@ export default function MealInfo(props) {
     const [showModal, setShowModal] = useState(false);
     const [timer, setTimer] = useState(0);
     const [countdown, setCountdown] = useState(null);
-    const [audio] = useState(typeof Audio !== "undefined" && new Audio('/alarm.mp3'));
-    const [onScreen, setOnScreen] = useState(false);
+    const [audio] = useState(typeof Audio !== "undefined" && new Audio('./alarm.mp3'));
     const [wakeLock, setWakeLock] = useState(null);
     const [toastMessage, setToastMessage] = useState("Phone Sleep Turned Off");
 
-    const countryIcons = [
-        { strArea: "American", code: "us" },
-        { strArea: "British", code: "gb" },
-        { strArea: "Canadian", code: "ca" },
-        { strArea: "Chinese", code: "cn" },
-        { strArea: "Croatian", code: "hr" },
-        { strArea: "Dutch", code: "nl" },
-        { strArea: "Egyptian", code: "eg" },
-        { strArea: "Filipino", code: "ph" },
-        { strArea: "French", code: "fr" },
-        { strArea: "Greek", code: "gr" },
-        { strArea: "Indian", code: "in" },
-        { strArea: "Irish", code: "ie" },
-        { strArea: "Italian", code: "it" },
-        { strArea: "Jamaican", code: "jm" },
-        { strArea: "Japanese", code: "jp" },
-        { strArea: "Kenyan", code: "ke" },
-        { strArea: "Malaysian", code: "my" },
-        { strArea: "Mexican", code: "mx" },
-        { strArea: "Moroccan", code: "ma" },
-        { strArea: "Polish", code: "pl" },
-        { strArea: "Portuguese", code: "pt" },
-        { strArea: "Russian", code: "ru" },
-        { strArea: "Spanish", code: "es" },
-        { strArea: "Thai", code: "th" },
-        { strArea: "Tunisian", code: "tn" },
-        { strArea: "Turkish", code: "tr" },
-        { strArea: "Ukrainian", code: "ua" },
-        { strArea: "Unknown", code: "unknown" },
-        { strArea: "Vietnamese", code: "vn" }
-    ];
+  
     const handleClose = () => {
         router.back();
     };
@@ -172,9 +141,9 @@ export default function MealInfo(props) {
             <hr className="w-64 h-1 mx-auto my-4 bg-red-100 border-0 rounded dark:bg-white" />
             <div className="flex justify-center flex-wrap">
                
-                <MealBio svg="/regions.svg"   bio={props.mealRegion} />
-                <MealBio svg="/categories.svg" bio={props.mealCategory} />
-                {props.mealTags && <MealBio svg="/tags.svg" bio={props.mealTags} />}
+                <MealBio svg="./regions.svg"   bio={props.mealRegion} />
+                <MealBio svg="./categories.svg" bio={props.mealCategory} />
+                {props.mealTags && <MealBio svg="./tags.svg" bio={props.mealTags} />}
             </div>
             <div>
                 <h2 style={{fontSize:'26px', margin:'15px'}} className=" font-bold text-gray-900 dark:text-white text-center">Ingredients</h2>
