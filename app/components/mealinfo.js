@@ -10,7 +10,7 @@ export default function MealInfo(props) {
     const [showModal, setShowModal] = useState(false);
     const [timer, setTimer] = useState(0);
     const [countdown, setCountdown] = useState(null);
-    const [audio] = useState(typeof Audio !== "undefined" && new Audio('./public/alarm.mp3'));
+    const [audio] = useState(typeof Audio !== "undefined" && new Audio('/alarm.mp3'));
     const [onScreen, setOnScreen] = useState(false);
     const [wakeLock, setWakeLock] = useState(null);
     const [toastMessage, setToastMessage] = useState("Phone Sleep Turned Off");
@@ -172,9 +172,9 @@ export default function MealInfo(props) {
             <hr className="w-64 h-1 mx-auto my-4 bg-red-100 border-0 rounded dark:bg-white" />
             <div className="flex justify-center flex-wrap">
                
-                <MealBio svg="./public/regions.svg"   bio={props.mealRegion} />
-                <MealBio svg="./public/categories.svg" bio={props.mealCategory} />
-                {props.mealTags && <MealBio svg="./public/tags.svg" bio={props.mealTags} />}
+                <MealBio svg="/regions.svg"   bio={props.mealRegion} />
+                <MealBio svg="/categories.svg" bio={props.mealCategory} />
+                {props.mealTags && <MealBio svg="/tags.svg" bio={props.mealTags} />}
             </div>
             <div>
                 <h2 style={{fontSize:'26px', margin:'15px'}} className=" font-bold text-gray-900 dark:text-white text-center">Ingredients</h2>
