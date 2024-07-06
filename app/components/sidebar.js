@@ -21,13 +21,13 @@ return (
                 </svg>
             </button>
             <div style={{width:'65%'}} className=" flex justify-center md:hidden ">
-                <Image src="/semi_logo.png" alt="avatar" width={80} height={80} />
+                <Image src="./semi_logo.png" alt="avatar" width={80} height={80} />
             </div>
         </div>
 
         <aside id="default-sidebar" className="fixed md:relative top-0 left-0 z-40 w-64 md:w-48 xl:w-64 h-full h-screen transition-transform -translate-x-full sm:translate-x-0" aria-label="Sidebar">
             <div className="h-full px-3 py-4 overflow-y-auto bg-white ">
-                <img src="/full_logo.png" alt="avatar" />
+                <img src="./full_logo.png" alt="avatar" />
                 <ul>
                     <li>
                         <Link href="/all_meals" className={clsx("flex items-center p-2 mb-2 text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 group",{
