@@ -10,7 +10,7 @@ export default function MealInfo(props) {
     const [showModal, setShowModal] = useState(false);
     const [timer, setTimer] = useState(0);
     const [countdown, setCountdown] = useState(null);
-    const [audio] = useState(typeof Audio !== "undefined" && new Audio('/alarm.mp3'));
+    const [audio] = useState(typeof Audio !== "undefined" && new Audio('./alarm.mp3'));
     const [onScreen, setOnScreen] = useState(false);
     const [wakeLock, setWakeLock] = useState(null);
     const [toastMessage, setToastMessage] = useState("Phone Sleep Turned Off");
