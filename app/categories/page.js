@@ -17,7 +17,10 @@ export default function Categories(){
     }
 
     return (
-        <div className="flex flex-wrap">
+        <div className="pt-10 md:pt-5">
+          <div className="pt-10 md:pt-0">
+            <h1 style={{fontWeight:'500'}} className="text-3xl text-center">Categories</h1>
+          <div className="flex flex-wrap justify-center">
         {data?.categories.map((category) => (
           <div className="p-2" key={category.idCategory} onClick={()=> handleCardClick(category.strCategory)}>
             <MealCard
@@ -27,6 +30,8 @@ export default function Categories(){
           </div>
         ))}
       </div>
+        </div>
+        </div>
     )
 
 }

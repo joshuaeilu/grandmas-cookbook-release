@@ -58,7 +58,7 @@ export default function FilterBtn(props) {
         <div className="relative inline-block text-left" ref={dropdownRef}>
             <button 
                 onClick={toggleDropdown} 
-                className="m-2.5 text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm p-3 text-center inline-flex items-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800 shadow-md"
+                className="m-2.5 text-white bg-red-600 hover:bg-red-800 focus:ring-4 focus:outline-none focus:ring-red-300 font-medium rounded-lg text-sm p-3 text-center inline-flex items-center dark:bg-red-600 dark:hover:bg-red-700 dark:focus:ring-red-800 shadow-md"
                 type="button">
                 <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="white">
                     <path d="M440-160q-17 0-28.5-11.5T400-200v-240L168-736q-15-20-4.5-42t36.5-22h560q26 0 36.5 22t-4.5 42L560-440v240q0 17-11.5 28.5T520-160h-80Zm40-308 198-252H282l198 252Zm0 0Z"/>
@@ -71,7 +71,7 @@ export default function FilterBtn(props) {
                         <form>
                             <div className="mb-4">
                                 <label htmlFor="regionSelect" className="block mb-2 text-sm font-medium text-gray-700">Select Region:</label>
-                                <select id="regionSelect" value={region} onChange={handleRegionChange} className="block w-full p-2 border border-gray-300 rounded-md shadow-sm focus:ring-blue-500 focus:border-blue-500">
+                                <select id="regionSelect" value={region} onChange={handleRegionChange} className="block w-full p-2 border border-gray-300 rounded-md shadow-sm focus:ring-red-500 focus:border-red-500">
                                     <option value="all">All Regions</option>
                                     {filterRegion.map((region, index) => (
                                         <option key={index} value={region}>{region}</option>
@@ -81,7 +81,7 @@ export default function FilterBtn(props) {
                             </div>
                             <div className="mb-4">
                                 <label htmlFor="categorySelect" className="block mb-2 text-sm font-medium text-gray-700">Select Category:</label>
-                                <select id="categorySelect" value={category} onChange={handleCategoryChange} className="block w-full p-2 border border-gray-300 rounded-md shadow-sm focus:ring-blue-500 focus:border-blue-500">
+                                <select id="categorySelect" value={category} onChange={handleCategoryChange} className="block w-full p-2 border border-gray-300 rounded-md shadow-sm focus:ring-red-500 focus:border-red-500">
                                     <option value="all">All Categories</option>
                                     {filterCategory.map((category, index) => (
                                         <option key={index} value={category}>{category}</option>
@@ -91,7 +91,7 @@ export default function FilterBtn(props) {
                             </div>
                             <button 
                                 type="button" 
-                                className="w-full text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm p-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800 shadow-sm"
+                                className="w-full text-white bg-red-700 hover:bg-red-800 focus:ring-4 focus:outline-none focus:ring-red-300 font-medium rounded-lg text-sm p-2.5 text-center dark:bg-red-600 dark:hover:bg-red-700 dark:focus:ring-red-800 shadow-sm"
                                 onClick={() => { 
                                     // Implement your filter logic here
                                     toggleDropdown();

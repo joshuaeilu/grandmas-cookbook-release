@@ -24,7 +24,7 @@ export default function RootLayout({ children }) {
         
         <SideBar />
         <Suspense fallback={<div>Loading...</div>}>
-        <div  className="flex-1">{children}</div>
+        <div  className="flex-1 ">{children}</div>
         </Suspense>
         </div>
         

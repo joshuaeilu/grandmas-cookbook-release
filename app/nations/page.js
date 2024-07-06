@@ -42,7 +42,10 @@ export default function Nations(){
     }
 
     return (
-        <div className="flex flex-wrap">
+        <div className="pt-10 md:pt-5">
+            <div className="pt-10 md:pt-0">
+            <h1 style={{fontWeight:'500'}} className="text-3xl text-center">Nations</h1>
+            <div className="flex flex-wrap justify-center">
         {countryIcons.map((country) => (
                             <div className="p-2"  onClick={() => handleClick(country.strArea)}>
                                 <MealCard
@@ -52,6 +55,8 @@ export default function Nations(){
                             </div>
                         ))}
     </div>
+        </div>
+        </div>
     )
 
 }

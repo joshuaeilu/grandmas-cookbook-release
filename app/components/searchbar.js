@@ -38,13 +38,13 @@ export default function SearchBar(props) {
     return (
       
       <div style={{display:'flex', justifyContent:'center'}}>
- <div className="w-full max-w-lg mt-2 relative">
+ <div className=" w-full max-w-lg mt-2 relative">
       <form onSubmit={handleSubmit} >
         <div className="relative">
           <input
             type="search"
             id="default-search"
-            className="block w-full p-4  text-sm text-gray-700 border border-gray-300 rounded-lg bg-gray-50 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+            className="block w-full p-4  text-sm text-gray-700 border border-gray-300 rounded-lg bg-gray-50 focus:ring-red-500 focus:border-red-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-red-500 dark:focus:border-red-500"
             placeholder="Search Meal Recipes..."
             value={searchTerm}
             onChange={handleSearchChange}
