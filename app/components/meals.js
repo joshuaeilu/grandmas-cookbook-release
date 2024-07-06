@@ -4,7 +4,6 @@ import {useState, useEffect} from 'react';
 import SearchBar from "../components/searchbar.js";
 import MealCard from "../components/mealcard.js";
 import styles from '../page.module.css';
-import CardSkeleton from './card_skeleton.js';
 import {Suspense} from 'react';
 
 
@@ -43,13 +42,11 @@ export default function Meals({mData}) {
 
         {mealData.map((meal) => (
                         <button className={styles.mealButton}  onClick={() => handleClick(meal.idMeal)}>
-                           <Suspense fallback={<CardSkeleton/>}>
                            <MealCard
                                 key={meal.idMeal}
                                 imgSrc={meal.strMealThumb}
                                 title={meal.strMeal.substring(0, 23)}
                             />
-                            </Suspense>
                         </button>
                     ))}
 

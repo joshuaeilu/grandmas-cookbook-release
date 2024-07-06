@@ -1,3 +1,5 @@
+import Image from 'next/image'
+import { Suspense } from 'react'
 export default function IngredientsTable(props) {
     
 return (
@@ -24,7 +26,7 @@ return (
                 props.ingredientArray.map((ingredient, index) => (
                     <tr className="bg-white border-b dark:bg-gray-800 dark:border-gray-700">
                         <th scope="row" className="px-3 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
-                            <img src={`https://www.themealdb.com/images/ingredients/${ingredient}.png`} alt={ingredient} className="h-10 w-10 rounded-full" />
+                            <Image src={`https://www.themealdb.com/images/ingredients/${ingredient}.png`} alt={ingredient} width={50} height={50} />
                         </th>
                         <td style={{fontSize:'16px'}} className="px-3 py-4">
                             {ingredient}

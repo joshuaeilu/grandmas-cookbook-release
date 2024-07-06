@@ -1,16 +1,15 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, Suspense } from 'react';
 import MealBio from './mealbio';
 import IngredientsTable from './ingredients.js';
 import Image from 'next/image';
 import Instructions from './instructions.js';
 import { useRouter } from 'next/navigation';
-
 export default function MealInfo(props) {
     const router = useRouter();
     const [showModal, setShowModal] = useState(false);
     const [timer, setTimer] = useState(0);
     const [countdown, setCountdown] = useState(null);
-    const [audio] = useState(typeof Audio !== "undefined" && new Audio('./alarm.mp3'));
+    const [audio] = useState(typeof Audio !== "undefined" && new Audio('/alarm.mp3'));
     const [wakeLock, setWakeLock] = useState(null);
     const [toastMessage, setToastMessage] = useState("Phone Sleep Turned Off");
 
@@ -141,9 +140,9 @@ export default function MealInfo(props) {
             <hr className="w-64 h-1 mx-auto my-4 bg-red-100 border-0 rounded dark:bg-white" />
             <div className="flex justify-center flex-wrap">
                
-                <MealBio svg="./regions.svg"   bio={props.mealRegion} />
-                <MealBio svg="./categories.svg" bio={props.mealCategory} />
-                {props.mealTags && <MealBio svg="./tags.svg" bio={props.mealTags} />}
+                <MealBio svg="/regions.svg"   bio={props.mealRegion} />
+                <MealBio svg="/categories.svg" bio={props.mealCategory} />
+                {props.mealTags && <MealBio svg="/tags.svg" bio={props.mealTags} />}
             </div>
             <div>
                 <h2 style={{fontSize:'26px', margin:'15px'}} className=" font-bold text-gray-900 dark:text-white text-center">Ingredients</h2>
