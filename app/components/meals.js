@@ -31,7 +31,7 @@ export default function Meals({mData}) {
         }
 
 
-          
+    
 
         return (
             <div className=' absolute md:relative mt-10 pt-10 md:mt-0 md:pt-0'  style={{ display: 'flex', flexDirection: 'column', width:'100%' }}>
